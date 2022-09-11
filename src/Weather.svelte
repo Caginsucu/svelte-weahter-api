@@ -50,7 +50,7 @@ import { Link } from "svelte-navigator";
 		{:else}
 			<div class="content-wrapper">
 				<div class="content">
-					<img src="{`../images/${data.weather[0].main}.svg`}" alt="" width="80">
+					<img src="{`../public/images/${data.weather[0].main}.svg`}" alt="" width="80">
 					<div class="content-main">
 						<p class="city-degree">{data.main.temp.toString().slice(0,2)}°</p>
 						<p class="city-weather-state">{data.weather[0].main}</p>
