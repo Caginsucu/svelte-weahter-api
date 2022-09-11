@@ -3736,7 +3736,7 @@ var app = (function () {
     			p = element("p");
     			t0 = text("Something went wrong: ");
     			t1 = text(t1_value);
-    			add_location(p, file, 64, 2, 1416);
+    			add_location(p, file, 64, 2, 1438);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -3819,6 +3819,7 @@ var app = (function () {
     	let div1;
     	let img;
     	let img_src_value;
+    	let img_alt_value;
     	let t0;
     	let div0;
     	let p0;
@@ -3851,17 +3852,17 @@ var app = (function () {
     			p2 = element("p");
     			t6 = text(t6_value);
     			if (!src_url_equal(img.src, img_src_value = `./images/${/*data*/ ctx[5].weather[0].main}.svg`)) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", "");
+    			attr_dev(img, "alt", img_alt_value = /*data*/ ctx[5].weather[0].main);
     			attr_dev(img, "width", "80");
     			add_location(img, file, 52, 5, 1068);
     			attr_dev(p0, "class", "city-degree svelte-1yjecro");
-    			add_location(p0, file, 54, 6, 1177);
+    			add_location(p0, file, 54, 6, 1199);
     			attr_dev(p1, "class", "city-weather-state svelte-1yjecro");
-    			add_location(p1, file, 55, 6, 1250);
+    			add_location(p1, file, 55, 6, 1272);
     			attr_dev(p2, "class", "city-title svelte-1yjecro");
-    			add_location(p2, file, 56, 6, 1313);
+    			add_location(p2, file, 56, 6, 1335);
     			attr_dev(div0, "class", "content-main svelte-1yjecro");
-    			add_location(div0, file, 53, 5, 1144);
+    			add_location(div0, file, 53, 5, 1166);
     			attr_dev(div1, "class", "content svelte-1yjecro");
     			add_location(div1, file, 51, 4, 1041);
     			attr_dev(div2, "class", "content-wrapper svelte-1yjecro");
@@ -3886,6 +3887,10 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*promise*/ 2 && !src_url_equal(img.src, img_src_value = `./images/${/*data*/ ctx[5].weather[0].main}.svg`)) {
     				attr_dev(img, "src", img_src_value);
+    			}
+
+    			if (dirty & /*promise*/ 2 && img_alt_value !== (img_alt_value = /*data*/ ctx[5].weather[0].main)) {
+    				attr_dev(img, "alt", img_alt_value);
     			}
 
     			if (dirty & /*promise*/ 2 && t1_value !== (t1_value = /*data*/ ctx[5].main.temp.toString().slice(0, 2) + "")) set_data_dev(t1, t1_value);
