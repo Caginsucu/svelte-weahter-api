@@ -9,7 +9,6 @@ import { Link } from "svelte-navigator";
 	async function getWeather(city){
 		const res = await fetch(`${apiUrl}weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`);
 		const data = res.json();
-		console.log(data);
 		return data;
 	}
 
